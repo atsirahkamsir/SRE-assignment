@@ -57,14 +57,14 @@ def read_logs_to_ELK():
 
 	for doc in docs:
 		logs_doc = json.loads(doc)
-		
+		print(logs_doc)
 		for field in logs_doc:
 			if field == 'CLIENT ID':
-				logs_doc['CLIENT ID'] = encrypt_CLIENTID(logs_doc['CLIENT ID'])
+				logs_doc['CLIENT ID'] = str(encrypt_CLIENTID(logs_doc['CLIENT ID']))
 				error_doclist.append(logs_doc)
 			elif field =='ID':
 				data_doclist.append(logs_doc)
-
+		
 	try:
 		print ("\nAttempting to index the list of  data docs using helpers.bulk()")
 
@@ -86,7 +86,7 @@ def read_logs_to_ELK():
 		print ("\nAttempting to index the list of error docs using helpers.bulk()")
 
 		# use the helpers library's Bulk API to index list of Elasticsearch docs
-		resp = helpers.bulk(client,error_doclist,index = "error",doc_type = "_doc")
+		resp = helpers.bulk(client,error_doclist,index ="error",doc_type = "_doc")
 
 		# print the response returned by Elasticsearch
 		print ("helpers.bulk() RESPONSE:", resp)
@@ -94,18 +94,13 @@ def read_logs_to_ELK():
 
 
 
+
 	except Exception as err:
 
 		print("Elasticsearch helpers.bulk() ERROR:", err)
+
+	
 		
-
-	query_all = {'size' : 10_000,'query': {'match_all' : {} } }
-	resp = client.search(index = "data",body = query_all)
-
-	print ("search() response:", json.dumps(resp, indent=4))
-
-	# print the number of docs in index
-	print ("Length of docs returned by search():", len(resp['hits']['hits']))
 
 if __name__ == "__main__":
     read_logs_to_ELK()
