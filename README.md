@@ -30,6 +30,6 @@ $ pip install -r requirements.txt
 ```
 ## Challenges Fced
 ***
-It was a challenging yet rewarding assignment for me because all the concepts tested were fairly new to me.Biggest challenge faced was figuring out how to configure Elasticsearch on my localhost and how to have my python script establish a succesful connection to an Elasticsearch instance. I also had to readup on the syntax used in elasticsearch so that I am able to convert json to an acceptable index format in Elastic.
+It was a challenging yet rewarding assignment for me because all the concepts tested were fairly new but I had fun learning new concepts.Biggest challenge faced was figuring out how to configure Elasticsearch on my localhost and how to have my python script establish a succesful connection to an Elasticsearch instance. I also had to readup on the syntax used in elasticsearch so that I am able to convert json to an acceptable index format in Elastic.
 For the 2nd question, it was slightly confusing as to what a trigger is. However after reading  up on Task Scheduler and how it can be used to run python scripts automatically, it gave me a rough idea on how to answer the 2nd part of the question. My intepretation might be wrong but I gave a thorough explanation of my answers.
 
