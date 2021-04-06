@@ -6,7 +6,7 @@ Perform a data dump into ELK stack. Language used for script: Python 3. Project 
 1. [General Info](#general-info)
 2. [Technologies](#technologies)
 3. [Installation](#installation)
-4. [Challenges Faced](#challenges)
+4. [Challenges](#challenges)
 
 ### General Info
 ***
