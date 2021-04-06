@@ -11,11 +11,10 @@ Perform a data dump into ELK stack. Language used for script: Python 3. Project 
 ### General Info
 ***
 A python script was developed to scrape event logs to be dumped into ELK. For the purpose of assignment, artificial data is being generated and loaded into ‘logs_Apr_2021.txt’. This can be done by running ‘random_logsgenerator.py’. Logs are in json format with each json object containing 4 fields ie ID/CLIENTID,timestamp,log_level and thread. Generation of this artificial data takes in the assumptions 
-1) timestamp format is of form yyyy-mm-ddTHH:MM:SS
-2) 2 log levels: ERROR/INFO
-3) each log files, contain logs for that particular Month-Year
-If json object contains ‘CLIENT ID’ field, it is an error index
-Else , it is a data index
+1)  timestamp format is of form yyyy-mm-ddTHH:MM:SS
+2)  2 log levels: ERROR/INFO
+3)  each log files, contain logs for that particular Month-Year
+ If json object contains ‘CLIENT ID’ field, it is an error index. Else , it is a data index.
 For each client ID, an encryption is done to the id before being sent to Elasticsearch. This is done by generating a key. This key is stored in a file in the secretkeys folder. Eg. logs_2021_Apr.txt, refer to 2021_April.key for its corresponding key. Key needs to be kept in a secured folder so that CLIENT ID can be decrypted to its original value in the future.
 
 ## Technologies
